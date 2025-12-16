@@ -1,0 +1,292 @@
+/* --- Variables & Reset (already in HTML section above) --- */
+/*
+:root {
+    --primary-color: #0077b6;
+    --secondary-color: #00b4d8;
+    --accent-color: #00b894;
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --background-dark: #1e1e1e;
+    --background-light: #ffffff;
+}
+body { ... }
+*/
+
+/* 1. Header & Navigation Styling */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed; /* Sticky nav */
+    width: 90%;
+    top: 0;
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.tagline {
+    font-weight: 300;
+    font-size: 1.2em;
+    color: #b3e5fc; /* Lighter color for contrast */
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin: 10px 0 20px 0;
+    font-weight: 700;
+}
+
+.hero-content p {
+    max-width: 600px;
+    font-size: 1.1em;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #008f75; /* Darker accent */
+    transform: translateY(-2px);
+}
+
+/* 2. Section Styling */
+.section-padding {
+    padding: 80px 5%;
+}
+
+.dark-bg {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.dark-bg h2 {
+    color: var(--accent-color);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    position: relative;
+    color: var(--primary-color);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* 3. Skills Grid Styling */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: #2a2a2a; /* Slightly lighter dark background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    border-top: 5px solid var(--accent-color);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+}
+
+.skill-card h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+/* 4. Certifications Styling */
+.cert-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background-color: var(--background-light);
+    border: 1px solid #ddd;
+    border-left: 5px solid var(--primary-color);
+    padding: 20px;
+    width: 280px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s;
+}
+
+.cert-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+}
+
+.cert-card img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.cert-card h4 {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+.cert-card p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.all-certs-link {
+    text-align: center;
+    margin-top: 30px;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+/* 5. Projects Styling (Re-using some card styles) */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    color: var(--text-dark);
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* 6. Footer Styling */
+footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* 7. Responsive Design (for smaller screens) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+    nav ul li a {
+        margin: 0 10px;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack projects vertically */
+    }
+}
