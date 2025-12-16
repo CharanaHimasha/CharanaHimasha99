@@ -1,10 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Network & Cloud Engineer Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /*
+        ***********************************************************
+        CSS STYLES GO HERE (SEE SECTION 2 BELOW)
+        ***********************************************************
+        */
+        :root {
+            --primary-color: #0077b6; /* LinkedIn Blue/Sky Blue */
+            --secondary-color: #00b4d8; /* Brighter Blue */
+            --accent-color: #00b894; /* Green for a tech highlight */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --background-dark: #1e1e1e;
+            --background-light: #ffffff;
+        }
+
+        /* Basic Reset and Font */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ... more CSS ... (See the CSS section for the full style) */
+    </style>
 </head>
 <body>
-    <h1>Hi, I'm Charana Himasha</h1>
-    <p>Welcome to my free portfolio hosted on GitHub.</p>
+
+    <header id="hero">
+        <nav>
+            <div class="logo">Your **Name**</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <span class="tagline">Cloud, Network & ML Specialist</span>
+            <h1>Network Engineer & **AWS/GCP/Azure Certified** Professional</h1>
+            <p>Designing, configuring, and maintaining secure enterprise networks with a strong foundation in modern Cloud architecture and Machine Learning.</p>
+            <a href="#certifications" class="cta-button">View My Credentials</a>
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <h2>About Me</h2>
+        <p class="summary">
+            Experienced Network Engineer with 2+ years at E-W Information Systems Limited. My academic background is specialized in Computer Systems & Network Engineering from SLIIT. I bridge the gap between secure networking and cutting-edge cloud/ML technologies.
+        </p>
+    </section>
+
+    <section id="skills" class="section-padding dark-bg">
+        <h2>Core Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Networking</h3>
+                <p>Enterprise Network Design, Configuration, Maintenance, Security, Cisco Networking Basics.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cloud Computing</h3>
+                <p>AWS (Certified Advanced Networking, Practitioner), Azure (AZ-900), Google Cloud (Digital Leader).</p>
+            </div>
+            <div class="skill-card">
+                <h3>Machine Learning & Data</h3>
+                <p>Google Cloud Professional ML, AWS Certified ML, Python, Introduction to Data Science, T-SQL.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Embedded & IoT</h3>
+                <p>Embedded Systems, Arduino, IoT Based Industrial Environment Monitoring & Controlling System.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="certifications" class="section-padding">
+        <h2>Top Certifications</h2>
+        <div class="cert-container">
+            <div class="cert-card">
+                <img src="https://via.placeholder.com/60/0077b6/fff?text=AWS" alt="AWS Logo">
+                <h4>AWS Certified Advanced Networking</h4>
+                <p>Issued: Aug 2025</p>
+            </div>
+            <div class="cert-card">
+                <img src="https://via.placeholder.com/60/ea4335/fff?text=GCP" alt="GCP Logo">
+                <h4>Google Cloud Prof. Machine Learning</h4>
+                <p>Issued: Dec 2024</p>
+            </div>
+            <div class="cert-card">
+                <img src="https://via.placeholder.com/60/0078d4/fff?text=AZ" alt="Azure Logo">
+                <h4>Microsoft Azure Fundamentals (AZ-900)</h4>
+                <p>Issued: Mar 2025</p>
+            </div>
+            </div>
+        <p class="all-certs-link">... and many more!</p>
+    </section>
+
+    <section id="projects" class="section-padding dark-bg">
+        <h2>Key Projects & Publications</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>IoT Based Industrial Monitoring</h3>
+                <p>System for monitoring & controlling industrial environments (Oct-Dec 2023, Associated with SLIIT).</p>
+            </div>
+            <div class="project-card">
+                <h3>Computer Vision Base Navigation Robot (IEEE)</h3>
+                <p>Published in IEEE, focusing on navigation for industrial environments (Dec 26, 2022).</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All Rights Reserved. | Built with HTML, CSS, & JS.</p>
+        <div class="social-links">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+    </footer>
+
+    <script>
+        /*
+        ***********************************************************
+        JAVASCRIPT GOES HERE (SEE SECTION 3 BELOW)
+        ***********************************************************
+        */
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple header scroll effect (optional)
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
